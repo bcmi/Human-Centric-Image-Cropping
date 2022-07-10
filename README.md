@@ -17,24 +17,32 @@ and the content-preserving feature helps to preserve the important content to be
   <img src='https://github.com/bcmi/Human-Centric-Image-Cropping/blob/main/figures/pipeline.png' align="center" width=800>
 </div>
 
+## Results
+
+In the below figure, we show the source image and the returned best crops by different methods, which demonstrates that our method can perform more reliable content preservation and removal. For example, in the first row, our method preserves more content on the left of human, probably because the person walks right to left, and reduces the top area that may hurt the image composition quality. In the second row, given the opposite face orientations to the first row, our model performs obviously different content preservation on the left/right sides of the human, yielding visually appealing crop. More qualitative and quantitative results are shown in our paper and supplementary.
+
+<div align="center">
+  <img src='https://github.com/bcmi/Human-Centric-Image-Cropping/blob/main/figures/qualitative_comparison.png' align="center" width=800>
+</div>
+
 
 ## Usage
+
+Here we not only release the code of our method, but also provide the selected human-centric samples in these frequently used image cropping datasets, 
+as well as their human bounding boxes under the folder 
+[``human_bboxes``](https://github.com/bcmi/Human-Centric-Image-Cropping/tree/main/human_bboxes).
 
 1. Download the source code and related image cropping datasets including CPC, GAICD, FCDB, and FLMS datasets. 
 The homepages of these datasets have been summarized in our another repository 
 [``Awesome-Aesthetic-Evaluation-and-Cropping``](https://github.com/bcmi/Awesome-Aesthetic-Evaluation-and-Cropping).
 
-2. We provide human bounding boxes of the selected human-centric images in above datasets under the folder 
-[``human_bboxes``](https://github.com/bcmi/Human-Centric-Image-Cropping/tree/main/human_bboxes).
+2. Change the pathes to above datasets and annotation files in ``config_GAICD.py`` and ``config_CPC.py``.
 
-3. Change the dataset pathes in ``config_GAICD.py`` and ``config_CPC.py``.
+3. Run ``generate_pseudo_heatmap.py`` to generate pseudo heatmaps for GAICD or CPC dataset. 
 
-4. Build the RoI&RoDAlign libraries. The source code of RoI&RoDAlign is from 
-[[here]](https://github.com/lld533/Grid-Anchor-based-Image-Cropping-Pytorch).
+4. Install the RoI&RoDAlign libraries following the instruction of [GAICD](https://github.com/HuiZeng/Grid-Anchor-based-Image-Cropping-Pytorch).
 
-5. Run ``generate_pseudo_heatmap.py`` to generate pseudo heatmaps for GAICD or CPC dataset. 
-
-6. Run ``train_on_GAICD.py`` or ``train_on_CPC.py`` to train a new model on GAICD or CPC dataset.
+5. Run ``train_on_GAICD.py`` (*resp.*, ``train_on_CPC.py``) to train a new model on GAICD dataset (*resp.*, CPC dataset).
 
 ### Requirements
 Please see [``requirement.txt``](./requirements.txt).
