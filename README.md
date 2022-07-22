@@ -2,10 +2,10 @@
 
 This is the official repository for the following paper:
 
-> **Human-centric Image Cropping with Partition-aware and Content-preserving Features**
+> **Human-centric Image Cropping with Partition-aware and Content-preserving Features** [[arxiv]](https://arxiv.org/pdf/2207.10269.pdf)
 >
 > Bo Zhang, Li Niu, Xing Zhao, Liqing Zhang<br>
-> Accepted by *ECCV2022*.
+> Accepted by **ECCV2022**.
 
 We consider a specific and practical application: human-centric image cropping, which focuses on the depiction of a person. 
 To this end, we propose a human-centric image cropping method with human-centric partition and important content preservation.
